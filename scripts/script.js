@@ -112,6 +112,12 @@ cards.forEach(addCard);
 
 // ========== Abrir modales ==========
 travelerProfileEditBtn.addEventListener("click", () => {
+  // Recuperar valores actuales y llenar inputs
+  const nameInput = document.querySelector("#profile-name");
+  const descInput = document.querySelector("#profile-description");
+  nameInput.value = profileName.textContent;
+  descInput.value = profileDetails.querySelector(".traveler-profile__bio").textContent;
+
   modalProfile.classList.add("modal_is-opened");
 });
 
@@ -164,7 +170,7 @@ formNewPlace.addEventListener("submit", (evt) => {
 
   const titleInput = document.querySelector("#place-title");
   const imageInput = document.querySelector("#place-image-url");
-
+  
   const newCard = {
     name: titleInput.value,
     image: imageInput.value
